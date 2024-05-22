@@ -18,10 +18,13 @@ export const Header = () => {
         <div>
           <Input placeholder="Search for your products" />
         </div>
+        <div>
+
+       
         <SignedOut>
-          <SignInButton />
+          <SignInButton><Button>Login</Button></SignInButton>
         </SignedOut>
-        <div><Button>Login</Button></div>
+        </div>
         <div><Button>Cart</Button></div>
         <div><Button>Become a Seller</Button></div>
         <div><ModeToggle /></div>
