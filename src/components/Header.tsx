@@ -20,10 +20,10 @@ export const Header = () => {
         </div>
         <div>
 
-       
-        <SignedOut>
-          <SignInButton><Button>Login</Button></SignInButton>
-        </SignedOut>
+
+          <SignedOut>
+            <SignInButton><Button>Login</Button></SignInButton>
+          </SignedOut>
         </div>
         <div><Button>Cart</Button></div>
         <div><Button>Become a Seller</Button></div>
