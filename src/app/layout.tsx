@@ -3,6 +3,13 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider"
 
+import {
+  ClerkProvider,
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton
+} from '@clerk/nextjs'
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -28,4 +35,26 @@ export default function RootLayout({
           >{children} </ThemeProvider></body>
     </html>
   );
+}
+//this is the new code my freind
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <ClerkProvider>
+      <html lang="en">
+        <body>
+          <SignedOut>
+            <SignInButton />
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
+          {children}
+        </body>
+      </html>
+    </ClerkProvider>
+  )
 }
