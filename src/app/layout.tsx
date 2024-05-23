@@ -5,10 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 
 import {
   ClerkProvider,
-  SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton
+  
 } from '@clerk/nextjs'
 
 
