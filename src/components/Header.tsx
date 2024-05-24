@@ -1,4 +1,3 @@
-'use client'
 import React from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -8,32 +7,30 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
-import { useEffect, useState } from "react";
+
 import { UserButton, SignInButton, SignedOut, SignedIn } from "@clerk/nextjs";
 
-export const Header = () => {
-  const [images, setImages] = useState([]);
- const getImages = () => {
-    fetch("/api/route")
-      .then((response) => response.json())
-      .then((data) => {console.log(data); setImages(data)})
-      .catch((error) => console.error("Error fetching data:", error));
-  };
+export const Header = async () => {
+  const res = await fetch(
+    "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita",
+  );
+  const data = await res.json()
+  console.log(`this is the name of the drink ${data.drinks[0].strDrink}`);
+
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
+  }
+
   return (
     <div className=" h-[100px]">
       <header className="flex justify-around pt-4 bg-inherit">
         <div>
-          <Button onClick={getImages}>Yogurt</Button>
-      
-        </div>
-        {images.map(image => (
-        <div key={image}>
-       
-          </div>))}
-        <div>
+          <Button>Yogurt</Button>
           <Input placeholder="Search for your products" />
         </div>
         <div>
+          <div>{`this is the name of the drink ${data.drinks[1].strDrink}`}</div>
           <SignedOut>
             <SignInButton>
               <Button>Login</Button>
