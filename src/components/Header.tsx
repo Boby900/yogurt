@@ -10,27 +10,18 @@ import {
 
 import { UserButton, SignInButton, SignedOut, SignedIn } from "@clerk/nextjs";
 
-export const Header = async () => {
-  const res = await fetch(
-    "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita",
-  );
-  const data = await res.json()
-  console.log(`this is the name of the drink ${data.drinks[0].strDrink}`);
-
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch data");
-  }
+export const Header = () => {
+  
 
   return (
     <div className=" h-[100px]">
       <header className="flex justify-around pt-4 bg-inherit">
         <div>
           <Button>Yogurt</Button>
-          <Input placeholder="Search for your products" />
+          
         </div>
+        <div><Input placeholder="Search for your products" /></div>
         <div>
-          <div>{`this is the name of the drink ${data.drinks[1].strDrink}`}</div>
           <SignedOut>
             <SignInButton>
               <Button>Login</Button>
@@ -52,14 +43,7 @@ export const Header = async () => {
             <UserButton />
           </div>
         </SignedIn>
-        <div>
-          <HoverCard>
-            <HoverCardTrigger>Hover</HoverCardTrigger>
-            <HoverCardContent>
-              The React Framework – created and maintained by @vercel.
-            </HoverCardContent>
-          </HoverCard>
-        </div>
+      
       </header>
     </div>
   );
