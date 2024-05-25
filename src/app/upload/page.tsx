@@ -1,9 +1,7 @@
-
-"use client"
 import React from "react";
 import Link from "next/link";
 import { UserButton, SignInButton, SignedOut, SignedIn } from "@clerk/nextjs";
-
+import { ProfileForm } from "@/components/Form";
 import {
   Bell,
   CircleUser,
@@ -29,13 +27,6 @@ import {
 
 import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-
-
-import { z } from "zod"
-
-const formSchema = z.object({
-  username: z.string().min(2).max(50),
-})
 
 export default function page() {
   return (
@@ -204,26 +195,10 @@ export default function page() {
             </form>
           </div>
           <SignedIn>
-          <div>
-            <UserButton />
-          </div>
-        </SignedIn>
-          {/* <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="secondary" size="icon" className="rounded-full">
-                <CircleUser className="h-5 w-5" />
-                <span className="sr-only">Toggle user menu</span>
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-              <DropdownMenuLabel>My Account</DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>Settings</DropdownMenuItem>
-              <DropdownMenuItem>Support</DropdownMenuItem>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>Logout</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu> */}
+            <div>
+              <UserButton />
+            </div>
+          </SignedIn>
         </header>
         <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
           <div className="flex items-center">
@@ -240,7 +215,10 @@ export default function page() {
               <p className="text-sm text-muted-foreground">
                 You can start selling as soon as you add a product.
               </p>
-              <Button className="mt-4">Add Product</Button>
+
+              <div>
+                <ProfileForm />
+              </div>
             </div>
           </div>
         </main>

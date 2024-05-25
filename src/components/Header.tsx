@@ -28,7 +28,7 @@ export const Header = () => {
         <div>
           <SignedOut>
             <SignInButton>
-              <Button>Login</Button>
+              <Button variant={'outline'}>Login</Button>
             </SignInButton>
           </SignedOut>
         </div>
