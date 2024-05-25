@@ -21,18 +21,19 @@ const formSchema = z.object({
   username: z.string().min(2, {
     message: "Username must be at least 2 characters.",
   }),
+  description: z.string().min(2, {
+    message: "Description must be at least 2 characters.",
+  }),
 });
 
 export function ProfileForm() {
   const { pending } = useFormStatus();
-  const [data, setData] = useState({ username: "", description: "" });
-  useEffect(() => {
-    setData({ username: "John Doe", description: "A cool person." });
-  }, []);
+  const [data, setData] = useState();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       username: "",
+      description: "",
     },
   });
   function onSubmit(values: z.infer<typeof formSchema>) {
@@ -51,6 +52,14 @@ export function ProfileForm() {
               <FormControl>
                 <Input placeholder="name" {...field} />
               </FormControl>
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="description"
+          render={({ field }) => (
+            <FormItem>
               <FormControl>
                 <Input placeholder="description" {...field} />
               </FormControl>
