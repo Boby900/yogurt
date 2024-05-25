@@ -1,9 +1,9 @@
 "use client"
-
+import { useFormStatus } from 'react-dom'
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
-
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import {
   Form,
@@ -23,6 +23,11 @@ const formSchema = z.object({
 })
 
 export function ProfileForm() {
+  const { pending } = useFormStatus()
+  const [data, setData] = useState({username: "", description: ""})
+  useEffect(() => {
+    setData({username: "John Doe", description: "A cool person."})
+  }, [])
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -44,7 +49,14 @@ export function ProfileForm() {
             <FormItem>
               
               <FormControl>
-                <Input placeholder="shadcn" {...field} />
+                <Input placeholder="name" {...field} />
+           
+
+              </FormControl>
+              <FormControl>
+                
+                <Input placeholder="description" {...field} />
+
               </FormControl>
               <FormDescription>
                 This is your public display name.
@@ -53,7 +65,7 @@ export function ProfileForm() {
             </FormItem>
           )}
         />
-        <Button type="submit">Submit</Button>
+        <Button type="submit" disabled={pending} onClick={()=>console.log()}>Submit</Button>
       </form>
     </Form>
   )
