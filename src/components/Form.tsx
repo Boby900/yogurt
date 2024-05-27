@@ -1,5 +1,5 @@
 "use client";
-import { addItem } from "@/app/actions";
+import Page from "@/app/actions";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
@@ -20,7 +20,7 @@ export function ProfileForm() {
     );
   }
   return (
-    <form action={addItem} className="space-y-8">
+    <form action={Page} className="space-y-8">
       <Input
         placeholder="name"
         name="data"

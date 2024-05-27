@@ -29,6 +29,7 @@
     "next": "14.2.3",
     "next-themes": "^0.3.0",
     "pexels": "^1.4.0",
+    "postgres": "^3.4.4",
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.51.5",
