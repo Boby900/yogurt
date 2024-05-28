@@ -14,7 +14,9 @@ export async function CarouselDemo() {
     "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita",
   );
   const data = await res.json()
-  console.log(data.drinks[0].strDrinkThumb);
+ 
+
+  console.log();
 
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
@@ -31,6 +33,7 @@ export async function CarouselDemo() {
                   <Image alt="none" src={data.drinks[0].strDrinkThumb} width={400} height={100} />
                 </CardContent>
               </Card>
+             
             </div>
           </CarouselItem>
         ))}
