@@ -15,8 +15,8 @@ export const Header = () => {
   
 
   return (
-    <div className=" h-[100px]">
-      <header className="flex justify-around pt-4 bg-inherit">
+    <div className="border-2 h-[100px]">
+      <header className="flex justify-around pt-8 bg-inherit">
         <div>
         <Link href="/" className="flex items-center gap-2 font-semibold">
               <Package2 className="h-6 w-6" />
