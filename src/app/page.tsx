@@ -1,16 +1,15 @@
-import React from 'react'
-import { Header } from '@/components/Header'
-import { CarouselDemo } from '@/components/CarouselDemo'
+import React from "react";
+import { Header } from "@/components/Header";
+import { CarouselDemo } from "@/components/CarouselDemo";
+import Pricing from "@/components/Pricing";
 const page = () => {
   return (
     <div>
       <Header />
-      <div className='justify-center items-center flex'>
-      < CarouselDemo />
-
-      </div>
+      
+      <Pricing />
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;
