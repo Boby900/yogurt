@@ -17,17 +17,17 @@ export default async function Pricing() {
         </div>
         <div className="mt-3">
           <div>
-            <Link className="bg-stone-600 tracking-wider font-sans block m-2 p-1 " href="/builder">
+            <Link className="bg-stone-500 tracking-wider font-sans block m-2 p-1 " href="/builder">
               Star Us
             </Link>
           </div>
           <div>
-            <Link className="bg-stone-600 tracking-wider font-sans block m-2 p-1" href="/builder">
+            <Link className="bg-stone-500 tracking-wider font-sans block m-2 p-1" href="/builder">
               Subscribe on Twitter
             </Link>
           </div>
           <div>
-            <Link className="bg-stone-600 font-sans block tracking-wider m-2 p-1" href={"/builder"}>
+            <Link className="bg-stone-500 font-sans block tracking-wider m-2 p-1" href={"/builder"}>
               Follow the LinkedIn page
             </Link>
           </div>
