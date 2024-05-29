@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center" id="title">Yogurt</h1>
 
-## Getting Started
+<p align="center"><img src="https://socialify.git.ci/Boby900/yogurt/image?description=1&amp;descriptionEditable=An%20e-commerce%20app%20for%20all%20your%20needs.&amp;font=Inter&amp;language=1&amp;name=1&amp;owner=1&amp;pattern=Signal&amp;theme=Dark" alt="project-image"></p>
 
-First, run the development server:
+<p id="description">An e-commerce app for all of your needs.</p>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+<p align="center"><img src="https://img.shields.io/badge/MADE%20BY%20Boby-000000.svg?style=for-the-badge&amp;logo=Vercel&amp;labelColor=000" alt="shields"><img src="https://img.shields.io/npm/v/turbo.svg?style=for-the-badge&amp;labelColor=000000" alt="shields"><img src="https://img.shields.io/npm/l/turbo.svg?style=for-the-badge&amp;labelColor=000000&amp;color=" alt="shields"></p>
+
+  
+  
+<h2>🧐 Features</h2>
+
+Here're some of the project's best features:
+
+*   Built in authentication and tailwind classes for better UI.
+*   Drizzle ORM for database
+
+<h2>🛠️ Installation Steps:</h2>
+
+<p>1. clone the repo</p>
+
+```
+git clone https://github.com/Boby900/yogurt.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<p>2. install the packages</p>
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+npm install or bun install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+<p>3. running it locally</p>
 
-## Learn More
+```
+npm run dev or bun run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+<h2>🍰 Contribution Guidelines:</h2>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Feel free to open PRs and Issues if find any bugs. All kinds of contributions are welcome.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+  
+  
+<h2>💻 Built with</h2>
 
-## Deploy on Vercel
+Technologies used in the project:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+*   Next.js
+*   Drzzle ORM
+*   Tailwind CSS
+*   zod
+*   React.js
+*   PostgreSQL
+*   TypeScript
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<h2>🛡️ License:</h2>
+
+This project is licensed under the MIT
+
+<h2>💖Like my work?</h2>
+
+buy me some noodles or coffee.
