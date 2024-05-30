@@ -2,24 +2,15 @@
 import bob from "@/assets/icons8-cheburashka-240.png";
 import Image from "next/image";
 import Link from "next/link";
-import Typical from "react-typical";
+
 export default function Pricing() {
   
   return (
     <div className="p-1 m-6">
-      {/* <h1 className=" p-1 font-bold text-center text-4xl font-sans">Pricing</h1> */}
+      <h1 className=" p-1 font-bold text-center text-4xl font-sans">Pricing</h1>
       <div>
       <strong className="bg-yellow-300 text-center text-4xl font-sans font-bold">
-        <Typical className={'text-primary'}
-             steps={[
-                     'Pricing...',
-                  1000,
-                 
-                  
-                ]}
-                wrapper="h1"
-                loop={Infinity}
-        />
+       
   </strong>
       </div>
      

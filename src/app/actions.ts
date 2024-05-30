@@ -1,14 +1,12 @@
 "use server";
+import { revalidatePath } from 'next/cache';
 import postgres from 'postgres';
-import zod from 'zod';
 
-const schema = zod.object({
-  data: zod.string(),
-});
+
 
 export default async function Page(formData: FormData) {
  
-    const sql = postgres(process.env.NEXT_PUBLIC_DATABASE_URL, { ssl: 'require' });
+    const sql = postgres(process.env.DATABASE_URL ??"", { ssl: 'require' });
     await sql`CREATE TABLE IF NOT EXISTS bob_bob (
       id SERIAL PRIMARY KEY,
       comments TEXT
@@ -18,9 +16,11 @@ export default async function Page(formData: FormData) {
       // Insert the comment into the table using parameterized query
       await sql`INSERT INTO bob_bob (comments) VALUES (${comment})`;
       console.log('Comment added successfully');
+      revalidatePath('/upload');
     } else {
       console.error('No data provided');
     }
+    
   }
   
   
