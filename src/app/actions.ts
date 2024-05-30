@@ -1,10 +1,14 @@
 "use server";
 import postgres from 'postgres';
+import zod from 'zod';
 
+const schema = zod.object({
+  data: zod.string(),
+});
 
 export default async function Page(formData: FormData) {
  
-    const sql = postgres(process.env.DATABASE_URL, { ssl: 'require' });
+    const sql = postgres(process.env.NEXT_PUBLIC_DATABASE_URL, { ssl: 'require' });
     await sql`CREATE TABLE IF NOT EXISTS bob_bob (
       id SERIAL PRIMARY KEY,
       comments TEXT
