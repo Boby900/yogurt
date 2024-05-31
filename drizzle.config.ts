@@ -19,6 +19,6 @@ export default defineConfig({
   dbCredentials: {
     url: process.env.DATABASE_URL!,
   },
-  schema: "../yogurt/src/db/schema.ts",
+  schema: "./src/db/schema.ts",
   out: "./migrations",
 });
