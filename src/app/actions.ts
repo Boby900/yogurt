@@ -1,10 +1,12 @@
 "use server";
 import { revalidatePath } from 'next/cache';
 import postgres from 'postgres';
+import { db } from '@/db/db';
+import { CreatePost, postTable } from '@/db/schema';
+// import { db } from './db';
+// import { InsertUser, usersTable } from './schema';
 
-
-
-export default async function Page(formData: FormData) {
+async function Page(formData: FormData) {
  
     const sql = postgres(process.env.DATABASE_URL, { ssl: 'require' });
     await sql`CREATE TABLE IF NOT EXISTS bob_bob (
@@ -24,3 +26,6 @@ export default async function Page(formData: FormData) {
   }
   
   
+  export default async function createUser(data: CreatePost) {
+    await db.insert(postTable).values(data);
+  }

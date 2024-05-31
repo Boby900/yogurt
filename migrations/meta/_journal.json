@@ -15,6 +15,13 @@
       "when": 1717073731956,
       "tag": "0001_low_satana",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1717076032994,
+      "tag": "0002_mixed_banshee",
+      "breakpoints": true
     }
   ]
 }

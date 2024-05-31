@@ -1,5 +1,5 @@
 "use client";
-import Page from "@/app/actions";
+import createUser from "@/app/actions";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
@@ -10,10 +10,14 @@ export function ProfileForm() {
   
    
   return (
-    <form action={Page} className="space-y-8">
+    <form action={createUser} className="space-y-8">
       <Input
         placeholder="name"
-        name="data"
+        name="title"
+      />
+      <Input
+        placeholder="description"
+        name="content"
       />
      <button type="submit">submit</button>
 
