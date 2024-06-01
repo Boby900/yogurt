@@ -23,10 +23,6 @@ export const postTable = pgTable("post_table", {
   id: serial("id").primaryKey(),
   title: text("title").notNull(),
   content: text("content").notNull(),
-  createdAt: timestamp("created_at").notNull().defaultNow(),
-  updatedAt: timestamp("updated_at")
-    .notNull()
-    .$onUpdate(() => new Date()),
 });
 
 export type InsertUser = typeof usersTable.$inferInsert;
