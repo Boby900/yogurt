@@ -1,3 +1,4 @@
+'use server'
 import { db } from '@/db/db';
 import { CreatePost, GetPost, postTable } from '@/db/schema';
 // import { db } from './db';
@@ -24,7 +25,8 @@ import { asc } from 'drizzle-orm';
 
 export const getData = async () => {
   const data = await db.select().from(postTable);
-  console.log(data);
+  console.log(data.map((d) => d.id));
+  console.log('data');
 
   return data;
 };
