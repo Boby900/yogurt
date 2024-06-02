@@ -4,9 +4,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { addData } from "@/db/queries";
-import { getPosts } from "@/app/actions";
+
 import { Textarea } from "@/components/ui/textarea";
-import { useState } from "react";
+
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -36,18 +36,7 @@ export default function ProfileForm() {
       content: "",
     },
   });
-  const [data, setData] = useState({
-    title: "",
-    content: "",
-  });
-  const createTodo = (title: string, content: string) => {
-    setData({ title, content });
-    addData({ title, content });
-  
-  };
-  const handleTextChange = (e:any) => {
-    setData({title: e.target.value, content: e.target.value});
-  };
+
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     await addData(values);
   };
@@ -65,14 +54,8 @@ export default function ProfileForm() {
           render={({ field }) => (
             <FormItem>
               <FormLabel>Title</FormLabel>
-              <FormControl >
-                <Input
-                 autoFocus={true}
-                  placeholder="title"
-                  {...field}
-                  onChange={handleTextChange}
-                  value={data.title}
-                />
+              <FormControl>
+                <Input autoFocus={true} placeholder="title" {...field} />
               </FormControl>
               <FormDescription>Please provide your title.</FormDescription>
               <FormMessage />
@@ -89,8 +72,6 @@ export default function ProfileForm() {
                 <Textarea
                   placeholder="Tell us a little bit about yourself"
                   {...field}
-                  onChange={handleTextChange}
-                  value={data.content}
                 />
               </FormControl>
               <FormDescription>Please provide some content.</FormDescription>
