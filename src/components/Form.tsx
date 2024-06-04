@@ -4,9 +4,10 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { addData } from "@/db/queries";
+import { Cloudinary } from "@cloudinary/url-gen";
 
 import { Textarea } from "@/components/ui/textarea";
-
+import React, { useState, FormEvent } from 'react'
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -18,6 +19,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+
 const formSchema = z.object({
   title: z.string().min(2, {
     message: "Title must be at least 2 characters.",
@@ -28,7 +30,10 @@ const formSchema = z.object({
 });
 export type MyFormFields = z.infer<typeof formSchema>;
 export default function ProfileForm() {
-  // 1. Define your form.
+  
+  const [isLoading, setIsLoading] = useState<boolean>(false)
+  const cld = new Cloudinary({ cloud: { cloudName: process.env.CloudinaryCloudName} });
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -38,15 +43,26 @@ export default function ProfileForm() {
   });
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
-    await addData(values);
+    setIsLoading(true) 
+    try {
+      await addData(values)
+    } catch (error) {
+      console.error(error)
+    }
+    finally {
+      setIsLoading(false)
+    }
+    
+  
   };
-  // 2. Define a submit handler.
 
   return (
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit((data) => onSubmit(data))}
         className="space-y-4 w-[60%]"
+        
+        
       >
         <FormField
           control={form.control}
@@ -77,9 +93,10 @@ export default function ProfileForm() {
               <FormDescription>Please provide some content.</FormDescription>
               <FormMessage />
             </FormItem>
+            
           )}
         />
-        <Button type="submit">Submit</Button>
+        <Button type="submit" disabled={isLoading}>{isLoading ? 'Submitting...' : 'Submit'}</Button>
       </form>
     </Form>
   );
