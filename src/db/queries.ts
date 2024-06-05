@@ -14,3 +14,4 @@ export const addData = async (data: MyFormFields) => {
   console.log("data added to db");
 };
 
+
