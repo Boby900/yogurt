@@ -69,9 +69,9 @@ export default function ProfileForm() {
           name="title"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Title</FormLabel>
+              <FormLabel>Name</FormLabel>
               <FormControl>
-                <Input autoFocus={true} placeholder="title" {...field} />
+                <Input autoFocus={true} placeholder="Name" {...field} />
               </FormControl>
               <FormDescription>Please provide your title.</FormDescription>
               <FormMessage />
@@ -83,10 +83,10 @@ export default function ProfileForm() {
           name="content"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Content</FormLabel>
+              <FormLabel>Your Feedback</FormLabel>
               <FormControl>
                 <Textarea
-                  placeholder="Tell us a little bit about yourself"
+                  placeholder="Tell us a little bit about your experience."
                   {...field}
                 />
               </FormControl>
