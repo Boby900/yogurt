@@ -8,7 +8,7 @@ import { Package2 } from "lucide-react";
 import { UserButton, SignInButton, SignedOut, SignedIn } from "@clerk/nextjs";
 import Link from "next/link";
 
-export const Header = () => {
+export default function Header(){
   return (
     <div className="border-2 h-[100px]">
       <header className="flex  justify-around pt-8 bg-inherit">
@@ -46,7 +46,7 @@ export const Header = () => {
         </div>
         <div className="hidden md:block">
           <Button variant={"outline"}>
-            <Link href="/upload">Feedback</Link>
+            <Link href="/upload" aria-label="feedback">Feedback</Link>
           </Button>
         </div>
         <div className="">
