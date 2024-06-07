@@ -36,11 +36,11 @@ export const Header = () => {
         </div>
 
         <div className="hidden md:block">
-          <Button variant={"outline"}>Your Products</Button>
+          <Button variant={"outline"}><Link href="/dashboard">Dashboard</Link></Button>
         </div>
         <div className="hidden md:block">
           <Button variant={"outline"}>
-            <Link href="/upload">Feedback</Link>{" "}
+            <Link href="/upload">Feedback</Link>
           </Button>
         </div>
         <div className="">
