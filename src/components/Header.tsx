@@ -8,7 +8,7 @@ import { Package2 } from "lucide-react";
 import { UserButton, SignInButton, SignedOut, SignedIn } from "@clerk/nextjs";
 import Link from "next/link";
 
-export default function Header(){
+export default function Header() {
   return (
     <div className="border-2 h-[100px]">
       <header className="flex  justify-around pt-8 bg-inherit">
@@ -27,27 +27,23 @@ export default function Header(){
         <div>
           <Input placeholder="Search for your products" />
         </div>
-        <div className="">
+        <div>
           <SignedOut>
-            <SignInButton>
-              <Button variant={"outline"}>Login</Button>
-            </SignInButton>
+            <SignInButton>Login</SignInButton>
           </SignedOut>
         </div>
 
         <div className="hidden md:block">
-          <Button variant={"outline"}><Link href="/dashboard">Dashboard</Link></Button>
+          <Link href="/dashboard">Dashboard</Link>
         </div>
-       
+
         <div className="hidden md:block">
-          <Button variant={"outline"}>
-            <Link href="/pricing">Pricing</Link>
-          </Button>
+          <Link href="/pricing">Pricing</Link>
         </div>
         <div className="hidden md:block">
-          <Button variant={"outline"}>
-            <Link href="/upload" aria-label="feedback">Feedback</Link>
-          </Button>
+          <Link href="/upload" aria-label="feedback">
+            Feedback
+          </Link>
         </div>
         <div className="">
           <ModeToggle />
@@ -60,4 +56,4 @@ export default function Header(){
       </header>
     </div>
   );
-};
+}
