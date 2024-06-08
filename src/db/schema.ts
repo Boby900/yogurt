@@ -22,7 +22,7 @@ export const postsTable = pgTable("posts_table", {
 export const postTable = pgTable("post_table", {
   id: serial("id").primaryKey(),
   title: text("title").notNull(),
-  content: text("content").notNull(),
+ 
 });
 
 export type InsertUser = typeof usersTable.$inferInsert;
