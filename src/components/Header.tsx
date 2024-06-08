@@ -34,14 +34,28 @@ export default function Header() {
         </div>
 
         <div className="hidden md:block">
-          <Link href="/dashboard">Dashboard</Link>
+          <Link
+            href="/dashboard"
+            className="hover:underline underline-offset-8 ... decoration-sky-500 focus:underline underline-offset-8 ... decoration-sky-500"
+          >
+            Dashboard
+          </Link>
         </div>
 
         <div className="hidden md:block">
-          <Link href="/pricing">Pricing</Link>
+          <Link
+            href="/pricing"
+            className="hover:underline underline-offset-8 ... decoration-sky-500 focus:underline underline-offset-8 ... decoration-sky-500"
+          >
+            Pricing
+          </Link>
         </div>
         <div className="hidden md:block">
-          <Link href="/upload" aria-label="feedback">
+          <Link
+            href="/upload"
+            aria-label="feedback"
+            className="hover:underline underline-offset-8 ... decoration-sky-500 focus:underline underline-offset-8 ... decoration-sky-500"
+          >
             Feedback
           </Link>
         </div>
