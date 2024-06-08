@@ -29,7 +29,14 @@ export default function Header() {
         </div>
         <div>
           <SignedOut>
-            <SignInButton>Login</SignInButton>
+            <SignInButton>
+              <Link
+                href="/dashboard"
+                className="hover:underline underline-offset-8 ... decoration-sky-500 "
+              >
+                Login
+              </Link>
+            </SignInButton>
           </SignedOut>
         </div>
 
