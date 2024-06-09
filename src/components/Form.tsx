@@ -30,9 +30,9 @@ const formSchema = z.object({
 });
 export type MyFormFields = z.infer<typeof formSchema>;
 export default function ProfileForm() {
-  
+
   const [isLoading, setIsLoading] = useState<boolean>(false)
-  const cld = new Cloudinary({ cloud: { cloudName: process.env.CloudinaryCloudName} });
+  const cld = new Cloudinary({ cloud: { cloudName: process.env.CloudinaryCloudName } });
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -43,7 +43,8 @@ export default function ProfileForm() {
   });
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
-    setIsLoading(true) 
+    setIsLoading(true)
+    form.reset();
     try {
       await addData(values)
     } catch (error) {
@@ -52,8 +53,8 @@ export default function ProfileForm() {
     finally {
       setIsLoading(false)
     }
-    
-  
+
+
   };
 
   return (
@@ -61,8 +62,8 @@ export default function ProfileForm() {
       <form
         onSubmit={form.handleSubmit((data) => onSubmit(data))}
         className="space-y-4 w-[60%]"
-        
-        
+
+
       >
         <FormField
           control={form.control}
@@ -93,7 +94,7 @@ export default function ProfileForm() {
               <FormDescription>Please provide some content.</FormDescription>
               <FormMessage />
             </FormItem>
-            
+
           )}
         />
         <Button type="submit" disabled={isLoading}>{isLoading ? 'Submitting...' : 'Submit'}</Button>
