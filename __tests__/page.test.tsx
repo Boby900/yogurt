@@ -1,11 +1,12 @@
 import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
 import Pricing from '@/components/Pricing'
+import ProfileForm from '@/components/Form'
 describe('Pricing', () => {
   it('renders a pricing', () => {
-    render(<Pricing />)
+    render(<ProfileForm />)
  
-    const heading = screen.getByRole('heading', { level: 1 })
+    const heading = screen.getByLabelText('title')
  
     expect(heading).toBeInTheDocument()
   })
