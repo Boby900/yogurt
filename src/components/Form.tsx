@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { addData } from "@/db/queries";
 import { Cloudinary } from "@cloudinary/url-gen";
+import { useToast } from "@/components/ui/use-toast"
 
 import { Textarea } from "@/components/ui/textarea";
 import React, { useState, FormEvent } from 'react'
@@ -32,6 +33,7 @@ export type MyFormFields = z.infer<typeof formSchema>;
 export default function ProfileForm() {
 
   const [isLoading, setIsLoading] = useState<boolean>(false)
+  const { toast } = useToast()
   const cld = new Cloudinary({ cloud: { cloudName: process.env.CloudinaryCloudName } });
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -43,10 +45,15 @@ export default function ProfileForm() {
   });
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
+     
     setIsLoading(true)
     form.reset();
     try {
       await addData(values)
+      toast({
+        title: "Hurray!",
+        description: "form submitted successfully",
+      })
     } catch (error) {
       console.error(error)
     }

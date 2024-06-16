@@ -7,6 +7,7 @@ import {
   ClerkProvider,
   
 } from '@clerk/nextjs'
+import { Toaster } from "@/components/ui/toaster";
 
 
 const inter = Inter({ subsets: ["greek"] });
@@ -32,10 +33,12 @@ export default function RootLayout({
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
-          >
+          > 
             <Header />
             {children}
+            <Toaster />
           </ThemeProvider>
+          
         </body>
       </html>
     </ClerkProvider>
