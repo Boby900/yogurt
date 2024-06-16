@@ -1,0 +1,1 @@
+ALTER TABLE "post_table" ALTER COLUMN "content" DROP NOT NULL;
