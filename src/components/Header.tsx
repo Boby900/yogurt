@@ -1,7 +1,13 @@
 "use client";
 import React from "react";
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+
 import { ModeToggle } from "./ui/mode-toggle";
 import { Menu } from "lucide-react";
 import { Package2 } from "lucide-react";
@@ -17,8 +23,53 @@ export default function Header() {
             href="/"
             className="flex bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600   items-center gap-2 font-semibold"
           >
+            <div className="md:hidden">
+              <DropdownMenu>
+                <DropdownMenuTrigger>
+                  <Menu className="h-6 w-6" />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                <DropdownMenuItem>
+                    <Link
+                      href="/"
+                      aria-label="feedback"
+                      className="hover:underline underline-offset-8 ... decoration-sky-500 focus:underline underline-offset-8 ... decoration-sky-500"
+                    >
+                      Home
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <Link
+                      href="/dashboard"
+                      className="hover:underline underline-offset-8 ... decoration-sky-500 focus:underline underline-offset-8 ... decoration-sky-500"
+                    >
+                      Dashboard
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <Link
+                      href="/pricing"
+                      className="hover:underline underline-offset-8 ... decoration-sky-500 focus:underline underline-offset-8 ... decoration-sky-500"
+                    >
+                      Pricing
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <Link
+                      href="/upload"
+                      aria-label="feedback"
+                      className="hover:underline underline-offset-8 ... decoration-sky-500 focus:underline underline-offset-8 ... decoration-sky-500"
+                    >
+                      Feedback
+                    </Link>
+                  </DropdownMenuItem>
+                  
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </div>
+
             <Package2 className="h-6 hidden md:block w-6 bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600" />
-            <Menu className="h-6 w-6  md:hidden" />
+
             <span className="font-extrabold text-transparent  bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 hidden md:block">
               Yogurt
             </span>
@@ -32,7 +83,7 @@ export default function Header() {
             <SignInButton>
               <Link
                 href="/dashboard"
-                className="hover:underline underline-offset-8 ... decoration-sky-500 "
+                className="hover:underline  underline-offset-8 ... decoration-sky-500 "
               >
                 Login
               </Link>

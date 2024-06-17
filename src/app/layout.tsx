@@ -27,6 +27,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
+      <link rel="icon" href="/favicon.ico" sizes="any" />
         <body>
           <ThemeProvider
             attribute="class"

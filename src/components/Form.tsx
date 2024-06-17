@@ -52,7 +52,7 @@ export default function ProfileForm() {
       await addData(values)
       toast({
         title: "Hurray!",
-        description: "form submitted successfully",
+        description: "your feedback submitted successfully",
       })
     } catch (error) {
       console.error(error)

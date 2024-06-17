@@ -8,7 +8,8 @@ export default function page() {
         <div
           className="flex flex-1   justify-center rounded-lg border border-dashed shadow-sm"
           x-chunk="dashboard-02-chunk-1"
-        >
+        > 
+        
           <ProfileForm />
         </div>
       </main>
