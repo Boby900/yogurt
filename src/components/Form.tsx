@@ -4,9 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { addData } from "@/db/queries";
-import { Cloudinary } from "@cloudinary/url-gen";
 import { useToast } from "@/components/ui/use-toast"
-
 import { Textarea } from "@/components/ui/textarea";
 import React, { useState, FormEvent } from 'react'
 import { Button } from "@/components/ui/button";
@@ -34,7 +32,6 @@ export default function ProfileForm() {
 
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const { toast } = useToast()
-  const cld = new Cloudinary({ cloud: { cloudName: process.env.CloudinaryCloudName } });
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),

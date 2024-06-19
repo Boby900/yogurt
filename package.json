@@ -7,14 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "seed": "node -r dotenv/config ./scripts/seed.js",
     "test": "jest",
     "test:watch": "jest --watch"
   },
   "dependencies": {
     "@clerk/nextjs": "^5.1.0",
-    "@cloudinary/react": "^1.13.0",
-    "@cloudinary/url-gen": "^1.19.0",
     "@hookform/resolvers": "^3.4.2",
     "@neondatabase/serverless": "^0.9.3",
     "@radix-ui/react-avatar": "^1.0.4",
@@ -26,8 +23,6 @@
     "@radix-ui/react-navigation-menu": "^1.1.4",
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-toast": "^1.1.5",
-    "@testing-library/dom": "^10.1.0",
-    "@vercel/postgres": "^0.8.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "dotenv": "^16.4.5",
@@ -36,7 +31,6 @@
     "lucide-react": "^0.379.0",
     "next": "14.2.3",
     "next-themes": "^0.3.0",
-    "pexels": "^1.4.0",
     "postgres": "^3.4.4",
     "react": "^18",
     "react-dom": "^18",
@@ -47,10 +41,6 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@babel/core": "^7.24.7",
-    "@babel/preset-env": "^7.24.7",
-    "@babel/preset-typescript": "^7.24.7",
-    "@jest/globals": "^29.7.0",
     "@testing-library/jest-dom": "^6.4.6",
     "@testing-library/react": "^16.0.0",
     "@types/bun": "latest",
@@ -58,7 +48,6 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "babel-jest": "^29.7.0",
     "drizzle-kit": "^0.21.4",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
@@ -67,7 +56,9 @@
     "jest-environment-jsdom": "^29.7.0",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "ts-jest": "^29.1.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
   },
   "module": "index.ts",
   "type": "module"
