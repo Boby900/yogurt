@@ -12,7 +12,7 @@ export const addData = async (data: MyFormFields) => {
     console.log("User is not signed in");
   }
   await db.insert(postTable).values({
-    userId: user.id,
+    id: user.id,
     title: data.title,
     content: data.content,
   });
