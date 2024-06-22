@@ -29,11 +29,11 @@ export default function Header() {
                   <Menu className="h-6 w-6" />
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
-                <DropdownMenuItem>
+                  <DropdownMenuItem>
                     <Link
                       href="/"
                       aria-label="feedback"
-                      className="hover:underline underline-offset-8 ... decoration-sky-500 focus:underline underline-offset-8 ... decoration-sky-500"
+                      className="hover:underline underline-offset-8 ... decoration-sky-500 focus:underline "
                     >
                       Home
                     </Link>
@@ -41,7 +41,7 @@ export default function Header() {
                   <DropdownMenuItem>
                     <Link
                       href="/dashboard"
-                      className="hover:underline underline-offset-8 ... decoration-sky-500 focus:underline underline-offset-8 ... decoration-sky-500"
+                      className="hover:underline underline-offset-8 ... decoration-sky-500 focus:underline "
                     >
                       Dashboard
                     </Link>
@@ -49,7 +49,7 @@ export default function Header() {
                   <DropdownMenuItem>
                     <Link
                       href="/pricing"
-                      className="hover:underline underline-offset-8 ... decoration-sky-500 focus:underline underline-offset-8 ... decoration-sky-500"
+                      className="hover:underline underline-offset-8 ... decoration-sky-500 focus:underline "
                     >
                       Pricing
                     </Link>
@@ -58,12 +58,11 @@ export default function Header() {
                     <Link
                       href="/upload"
                       aria-label="feedback"
-                      className="hover:underline underline-offset-8 ... decoration-sky-500 focus:underline underline-offset-8 ... decoration-sky-500"
+                      className="hover:underline underline-offset-8 ... decoration-sky-500 focus:underline "
                     >
                       Feedback
                     </Link>
                   </DropdownMenuItem>
-                  
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>
@@ -94,7 +93,7 @@ export default function Header() {
         <div className="hidden md:block">
           <Link
             href="/dashboard"
-            className="hover:underline underline-offset-8 ... decoration-sky-500 focus:underline underline-offset-8 ... decoration-sky-500"
+            className="hover:underline underline-offset-8 ... decoration-sky-500 focus:underline "
           >
             Dashboard
           </Link>
@@ -103,7 +102,7 @@ export default function Header() {
         <div className="hidden md:block">
           <Link
             href="/pricing"
-            className="hover:underline underline-offset-8 ... decoration-sky-500 focus:underline underline-offset-8 ... decoration-sky-500"
+            className="hover:underline underline-offset-8 ... decoration-sky-500 focus:underline  ... "
           >
             Pricing
           </Link>
@@ -112,7 +111,7 @@ export default function Header() {
           <Link
             href="/upload"
             aria-label="feedback"
-            className="hover:underline underline-offset-8 ... decoration-sky-500 focus:underline underline-offset-8 ... decoration-sky-500"
+            className="hover:underline ... decoration-sky-500 focus:underline underline-offset-8 ... "
           >
             Feedback
           </Link>

@@ -28,6 +28,7 @@
     "dotenv": "^16.4.5",
     "drizzle-orm": "^0.30.10",
     "embla-carousel-react": "^8.1.1",
+    "eslint-plugin-react-compiler": "^0.0.0-experimental-51a85ea-20240601",
     "lucide-react": "^0.379.0",
     "next": "14.2.3",
     "next-themes": "^0.3.0",

@@ -9,7 +9,7 @@ import {
 } from '@clerk/nextjs'
 import { Toaster } from "@/components/ui/toaster";
 
-
+import { StrictMode } from 'react';
 const inter = Inter({ subsets: ["greek"] });
 
 export const metadata: Metadata = {
@@ -25,6 +25,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
+    <StrictMode>
     <ClerkProvider>
       <html lang="en">
       <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -43,5 +44,6 @@ export default function RootLayout({
         </body>
       </html>
     </ClerkProvider>
+    </StrictMode>
   )
 }

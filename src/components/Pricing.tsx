@@ -7,7 +7,7 @@ export default function Pricing() {
   
   return (
     <div className="p-1 m-6">
-      <h1 className=" p-1 font-bold text-center text-4xl font-sans font-extrabold text-transparent  bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Pricing</h1>
+      <h1 className=" p-1  text-center text-4xl font-sans font-extrabold text-transparent  bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Pricing</h1>
       <div>
       <strong className="bg-yellow-300 text-center text-4xl font-sans font-bold">
        
