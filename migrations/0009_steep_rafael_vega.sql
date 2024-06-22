@@ -1,0 +1,1 @@
+ALTER TABLE "post_table" ADD COLUMN "user_id" text;
