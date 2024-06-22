@@ -26,9 +26,8 @@ const formSchema = z.object({
   content: z.string().min(2, {
     message: "Content must be at least 2 characters.",
   }),
-  id: z.string().min(2, {
-    message: "Id must be at least 2 characters.",
-  }).optional(),
+  user_id: z.string().optional()
+ 
 });
 export type MyFormFields = z.infer<typeof formSchema>;
 export default function ProfileForm() {
@@ -39,7 +38,7 @@ export default function ProfileForm() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      id: "",
+     
       title: "",
       content: "",
     },

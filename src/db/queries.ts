@@ -6,13 +6,9 @@ import { currentUser } from "@clerk/nextjs/server";
 
 export const addData = async (data: MyFormFields) => {
   const user = await currentUser();
-  if (user) {
-    console.log(user.id);
-  } else {
-    console.log("User is not signed in");
-  }
+  if (!user) throw new Error('User not found');
   await db.insert(postTable).values({
-    id: user.id,
+    user_id: user.id,
     title: data.title,
     content: data.content,
   });

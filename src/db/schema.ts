@@ -20,9 +20,10 @@ export const postsTable = pgTable("posts_table", {
     .$onUpdate(() => new Date()),
 });
 export const postTable = pgTable("post_table", {
-  id: text("id").primaryKey().notNull(),
+  id: serial("id").primaryKey(),
   title: text("title").notNull(),
   content: text("content").notNull(),
+  user_id: text('user_id')
   
 });
 
