@@ -28,8 +28,14 @@ git clone https://github.com/Boby900/yogurt.git
 ```
 npm install or bun install
 ```
+<p>3. add env keys in .env.local file</p>
 
-<p>3. running it locally</p>
+```
+neon db api keys
+clerk api keys
+```
+
+<p>4. running it locally</p>
 
 ```
 npm run dev or bun run dev
