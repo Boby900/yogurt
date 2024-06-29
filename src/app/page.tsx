@@ -1,6 +1,6 @@
 import React from "react";
 
-const Page = () => {
+const Home = () => {
   return (
     <div className="flex  justify-center align-bottom items-center mt-8 m-2 p-2 border-rounded">
       <div>
@@ -18,4 +18,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default Home;
