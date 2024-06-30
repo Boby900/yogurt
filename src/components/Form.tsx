@@ -4,9 +4,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { addData } from "@/db/queries";
-import { useToast } from "@/components/ui/use-toast"
+import { useToast } from "@/components/ui/use-toast";
 import { Textarea } from "@/components/ui/textarea";
-import React, { useState, FormEvent } from 'react'
+import React, { useState, FormEvent } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -26,42 +26,36 @@ const formSchema = z.object({
   content: z.string().min(2, {
     message: "Content must be at least 2 characters.",
   }),
-  user_id: z.string().optional()
- 
+  user_id: z.string().optional(),
 });
+
 export type MyFormFields = z.infer<typeof formSchema>;
 export default function ProfileForm() {
-
-  const [isLoading, setIsLoading] = useState<boolean>(false)
-  const { toast } = useToast()
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const { toast } = useToast();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-     
       title: "",
       content: "",
     },
   });
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
-     
-    setIsLoading(true)
+    setIsLoading(true);
     form.reset();
     try {
-      await addData(values)
+      await addData(values);
       toast({
         title: "Hurray!",
         description: "your feedback submitted successfully",
-      })
+      });
     } catch (error) {
-      console.error(error)
+      console.error(error);
+    } finally {
+      setIsLoading(false);
     }
-    finally {
-      setIsLoading(false)
-    }
-
-
   };
 
   return (
@@ -69,8 +63,6 @@ export default function ProfileForm() {
       <form
         onSubmit={form.handleSubmit((data) => onSubmit(data))}
         className="space-y-4 w-[60%]"
-
-
       >
         <FormField
           control={form.control}
@@ -101,10 +93,11 @@ export default function ProfileForm() {
               <FormDescription>Please provide some content.</FormDescription>
               <FormMessage />
             </FormItem>
-
           )}
         />
-        <Button type="submit" disabled={isLoading}>{isLoading ? 'Submitting...' : 'Submit'}</Button>
+        <Button type="submit" disabled={isLoading}>
+          {isLoading ? "Submitting..." : "Submit"}
+        </Button>
       </form>
     </Form>
   );
