@@ -5,7 +5,7 @@
 /.pnp
 .pnp.js
 .yarn/install-state.gz
-+ .turbo
+
 # testing
 /coverage
 
@@ -31,7 +31,13 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+/+ .turbo/
+
+.turbo
+
 + .turbo
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
