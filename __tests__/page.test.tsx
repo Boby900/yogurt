@@ -9,5 +9,5 @@ test('Page', () => {
 })
 test('Form', () => {
   render(<ProfileForm />)
-  expect(screen.getAllByText(/yogurt/i)).toBeDefined()
+  expect(screen.getAllByPlaceholderText(/name/i)).toBeDefined()
 })
