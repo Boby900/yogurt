@@ -1,13 +1,14 @@
 "use client";
 import React from "react";
 import { Input } from "@/components/ui/input";
+import yogurt from '@/assets/profile.png'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-
+import Image from "next/image";
 import { ModeToggle } from "./ui/mode-toggle";
 import { Menu } from "lucide-react";
 import { Package2 } from "lucide-react";
@@ -67,9 +68,8 @@ export default function Header() {
               </DropdownMenu>
             </div>
 
-            <Package2 className="h-6 hidden md:block w-6 bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600" />
 
-            <span className="font-extrabold text-transparent  bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 hidden md:block">
+            <span className="font-extrabold text-transparent   bg-clip-text bg-gradient-to-r from-stone-500 to-gray-700 hidden md:block">
               Yogurt
             </span>
           </Link>
